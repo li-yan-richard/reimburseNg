@@ -54,15 +54,8 @@ export class ReimburseComponent implements OnInit {
         formData.append('PurchaseDesc', this.reimburseform.get('PurchaseDesc')?.value);
         formData.append('file', this.theFile, this.theFile.name);
 
-        this.http.post('http://localhost:5000/api/reimburse', formData, {reportProgress: true, observe: 'events'})
-        .subscribe(event => {
-          if (event.type === HttpEventType.UploadProgress)
-            this.progress = Math.round(100 * event.loaded / MAX_SIZE);
-          else if (event.type === HttpEventType.Response) {
-            this.message = 'Upload success.';
-            this.onUploadFinished.emit(event.body);
-          }
-        });
+        this.http.post('http://localhost:5000/api/reimburse', formData)
+            .subscribe(res => {alert(res.toString())});
     }
     
     reader.readAsDataURL(this.theFile);
