@@ -1,0 +1,9 @@
+.centered {
+    position: fixed; /* or absolute */
+    top: 20%;
+    left: 20%;
+  }
+
+  .row {
+    padding: 10px;
+  }

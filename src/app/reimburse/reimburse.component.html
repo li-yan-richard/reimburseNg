@@ -1,0 +1,31 @@
+<form [formGroup] = "reimburseform" (ngSubmit)="onFormSubmit()" class="centered">
+    <div class="form-group row">
+        <label class="col-sm-6">Purchase Amount</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="PurchaseAmount"
+            placeholder="Enter Purchase Amount">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-4">Purchase Date</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="PurchaseDate"
+            placeholder="Enter Purchase Date">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-4">Purchase Desc</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="PurchaseDesc"
+            placeholder="Enter Purchase Desc">
+        </div>
+    </div>
+    <div class="form-group row">
+        <input type="file" name="receipt" (change)="onFileChange($event)">
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">
+            Submit for reimbursement
+        </button>
+    </div>
+</form>
